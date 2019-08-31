@@ -4,27 +4,27 @@ import java.util.Arrays;
 public class Main {
     public static void main(String[] args) {
 
-        int[] randomArray = populateArray(80, 20);
+        int[] VetorPopulado = populateArray(80, 20);
         System.out.println("|| CONTEÚDO DO VETOR ||");
-        System.out.println(Arrays.toString(randomArray));
-        int[] arrayComAux = ParImparComVetor(randomArray);
+        System.out.println(Arrays.toString(VetorPopulado));
+        int[] arrayComAux = ParImparComVetor(VetorPopulado);
         System.out.println("\nUSANDO VETOR AUXILIAR");
         System.out.println("Ordem do vetor ---->\t" + Arrays.toString(arrayComAux));
-        int[] arraySemAux = ParImparSemVetor(randomArray);
+        int[] arraySemAux = ParImparSemVetor(VetorPopulado);
         System.out.println("\nSEM VETOR AUXILIAR");
         System.out.println("Ordem do vetor ---->\t" + Arrays.toString(arraySemAux));
 
     }
 
     public static int[] populateArray(int numPar, int numImpar) {
-        Random randomNumber = new Random();
+        Random randomNum = new Random();
         int size = numPar + numImpar;
         int[] array = new int[size];
         int countPar = 0;
         int countImpar = 0;
         int i = 0;
         while (i < size) {
-            int rand = randomNumber.nextInt(100); //gera até x números randômicos
+            int rand = randomNum.nextInt(100); //gera até x números randômicos
             if (rand % 2 == 0) {
                 if (countPar < numPar) {
                     array[i] = rand;
