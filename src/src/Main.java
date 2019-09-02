@@ -1,10 +1,9 @@
 import java.util.Random;
-
 import java.util.Arrays;
+
 public class Main {
     public static void main(String[] args) {
-
-        int[] VetorPopulado = populateArray(80, 20);
+        int[] VetorPopulado = PopulaArray(80, 20);
         System.out.println("|| CONTEÚDO DO VETOR ||");
         System.out.println(Arrays.toString(VetorPopulado));
         int[] arrayComAux = ParImparComVetor(VetorPopulado);
@@ -16,14 +15,14 @@ public class Main {
 
     }
 
-    public static int[] populateArray(int numPar, int numImpar) {
+    public static int[] PopulaArray(int numPar, int numImpar) {
         Random randomNum = new Random();
-        int size = numPar + numImpar;
-        int[] array = new int[size];
+        int tamanho = numPar + numImpar;
+        int[] array = new int[tamanho];
         int countPar = 0;
         int countImpar = 0;
         int i = 0;
-        while (i < size) {
+        while (i < tamanho) {
             int rand = randomNum.nextInt(100); //gera até x números randômicos
             if (rand % 2 == 0) {
                 if (countPar < numPar) {
@@ -41,7 +40,7 @@ public class Main {
     }
 
     /**
-     * Método que irá percorrer um vetor e agrupar os números pares no inicio e ímpares no final sem o uso de um vetor auxiliar.
+     * Método que irá percorrer o vetor e agrupar os números pares no inicio e ímpares no final sem o uso de um vetor auxiliar.
      */
 
         public static int[] ParImparSemVetor(int... array) {
@@ -69,7 +68,7 @@ public class Main {
         }
 
         /**
-         * Método irá agrupar os pares no inicio e ímpares no final com o uso de um vetor
+         * Método irá agrupar os pares no inicio e ímpares no final com o uso de um vetor auxiliar
          */
         public static int[] ParImparComVetor(int... array) {
             int[] ordenaVet = new int[array.length];
