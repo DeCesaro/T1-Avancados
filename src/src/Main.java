@@ -1,3 +1,8 @@
+/**Nomes: Bernardo de Cesaro e Gustavo Possebon
+ * Disciplina de Algoritmos Avançados - Turma: 127
+ * Complexidade de Algoritmos
+ */
+
 import java.util.Random;
 import java.util.Arrays;
 
@@ -43,15 +48,15 @@ public class Main {
 
         public static int[] ParImparSemVetor(int... vet) { //Indica um número indeterminado de inteiros a serem colocados no array
             int i = 0; //1 iteracão
-            while (i < vet.length) {
-                boolean troca = false;
-                if (vet[i] % 2 == 0) { //Verifica se é par
-                    i++;
+            while (i < vet.length) { // 2 iterações
+                boolean troca = false; //1 +
+                if (vet[i] % 2 == 0) { //Verifica se é par 3 +
+                    i++; // 2 +
                 } else {
-                    int j = i;
-                    while (!troca) {
-                        if (vet[j] % 2 != 0 && j < vet.length - 1) { //Verifica se é impar e incrementa o j enquanto ele nao for o último
-                            j++;
+                    int j = i; // 1 +
+                    while (!troca) { // 1 +
+                        if (vet[j] % 2 != 0 && j < vet.length - 1) { //Verifica se é impar e incrementa o j enquanto ele nao for o último // 6 +
+                            j++; // 2 +
                         } else { // Realiza a troca entre os pares e impares
                             int aux = vet[i];
                             vet[i] = vet[j];
@@ -69,18 +74,18 @@ public class Main {
          * Método irá agrupar os pares no inicio e ímpares no final com o uso de um vetor auxiliar
          */
         public static int[] ParImparComVetor(int... vet) {
-            int[] ordenaVet = new int[vet.length];
-            int quantPar = 0;
-            int quantImpar = vet.length - 1;
-            for (int num : vet) {
-                if (num % 2 == 0) {
-                    ordenaVet[quantPar] = num;
-                    quantPar++;
+            int[] ordenaVet = new int[vet.length]; // 2 +
+            int quantPar = 0; // 1 +
+            int quantImpar = vet.length - 1; //3 +
+            for (int num : vet) { // 1 +
+                if (num % 2 == 0) { // 2 +
+                    ordenaVet[quantPar] = num; // 2 +
+                    quantPar++; // 2 +
                 } else {
-                    ordenaVet[quantImpar] = num;
-                    quantImpar--;
+                    ordenaVet[quantImpar] = num; // 2 +
+                    quantImpar--; // 2 +
                 }
             }
-            return ordenaVet;
+            return ordenaVet; // 1 +
         }
     }
